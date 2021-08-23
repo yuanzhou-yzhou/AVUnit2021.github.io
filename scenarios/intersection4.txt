@@ -1,0 +1,84 @@
+// intersection with two two-direction roads
+
+map_name = "san_francisco";
+time = 12:00;
+weather = {rain:0.5, snow: 0.1, wetness: heavy};
+evn = Environment(time, weather);
+
+car_model = "gt_sensors";
+ego_init_position ="lane_540"->50;   //default coordinate frame is ENU    10.2880001068115,
+ego_init_state = (ego_init_position);
+ego_target_position = "lane_572"->50; //default coordinate frame is ENU    10.1325969696045,
+ego_target_state = (ego_target_position);
+vehicle_type = (car_model);
+ego_vehicle = AV(ego_init_state, ego_target_state, vehicle_type);
+
+//npc1: lane_574 to lane_569
+npc1_init_position =  "lane_574"->100;
+npc1_init_state = (npc1_init_position, ,6);
+//npc1_waypoint =(("lane_72"->50, ,7), ("lane_72"->100, ,8), ("lane_68"->10, ,5));
+npc1_dest_state = ("lane_569"->30);
+npc1_model = "Sedan";
+npc1_type = (npc1_model);
+npc1 = Vehicle(npc1_init_state,  , npc1_dest_state, npc1_type); //Waypoint(npc1_waypoint)
+
+//npc2: lane_564 to lane_568
+npc2_init_position =  "lane_564"->10;
+npc2_init_state = (npc2_init_position, ,6);
+npc2_dest_state = ("lane_568"->50);
+npc2 = Vehicle(npc2_init_state,  , npc2_dest_state); //Waypoint(npc1_waypoint)
+
+//npc3: lane_565 to lane_569
+npc3_init_position =  "lane_565"->10;
+npc3_init_state = (npc3_init_position, ,6);
+npc3_dest_state = ("lane_569"->50);
+npc3 = Vehicle(npc3_init_state,  , npc3_dest_state); //Waypoint(npc1_waypoint)
+
+//npc4: lane_570 to lane_566
+npc4_init_position =  "lane_570"->10;
+npc4_init_state = (npc4_init_position, ,6);
+npc4_dest_state = ("lane_566"->50);
+npc4 = Vehicle(npc4_init_state,  , npc4_dest_state); //Waypoint(npc1_waypoint)
+
+//npc5: lane_571 to lane_567
+npc5_init_position =  "lane_571"->77;
+npc5_init_state = (npc5_init_position, ,6);
+npc5_dest_state = ("lane_567"->30);
+npc5 = Vehicle(npc5_init_state,  , npc5_dest_state); //Waypoint(npc1_waypoint)
+
+
+scenario0 = CreateScenario{load(map_name);
+			        ego_vehicle;
+			        {npc1, npc2, npc3, npc4, npc5}; // no other vehicles;
+			        {}; // no pedestrians;
+			        {}; // no obstacles;
+			        evn; // default environment
+			        {}; // no traffic constraints
+};
+
+
+Trace trace = EXE(scenario0);
+ego_state= trace[ego];
+npc1_state= trace[perception][npc1];
+npc1_truth= trace[truth][npc1];
+npc2_state = trace[perception][npc2];
+npc2_truth = trace[truth][npc2];
+npc3_state= trace[perception][npc3];
+npc3_truth =  trace[truth][npc3];
+npc4_state= trace[perception][npc4];
+npc4_truth =  trace[truth][npc4];
+npc5_state= trace[perception][npc5];
+npc5_truth =  trace[truth][npc5];
+
+dis1 = dis(ego_state, npc1_state);
+dis2 = dis(ego_state, npc2_state);
+dis3 = dis(ego_state, npc3_state);
+dis4 = dis(ego_state, npc4_state);
+dis5 = dis(ego_state, npc5_state);
+
+// assertion 0
+trace |= (G (dis1>=0.5 & dis2>=0.5 & dis3>=0.5 & dis4>=0.5 & dis5>=0.5)) & (F (dis(ego_state, ego_target_position)<=2.0));
+
+// assertion 1
+// trace |= F (dis(ego_state, ego_target_position)<=2.0);
+
