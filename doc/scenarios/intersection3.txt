@@ -5,9 +5,9 @@ weather = {rain:0.5, snow: 0.1, wetness: heavy};
 evn = Environment(time, weather);
 
 car_model = "gt_sensors";
-ego_init_position ="lane_623"->50;   //default coordinate frame is ENU    10.2880001068115,
+ego_init_position ="lane_623"->50;
 ego_init_state = (ego_init_position);
-ego_target_position = "lane_145"->50; //default coordinate frame is ENU    10.1325969696045,
+ego_target_position = "lane_145"->50;
 ego_target_state = (ego_target_position);
 vehicle_type = (car_model);
 ego_vehicle = AV(ego_init_state, ego_target_state, vehicle_type);
@@ -35,11 +35,10 @@ npc4 = Vehicle(npc4_init_state, , npc4_dest_state);
 
 scenario0 = CreateScenario{load(map_name);
 			        ego_vehicle;
-			        {npc1, npc2, npc3, npc4}; // no other vehicles;
+			        {npc1, npc2, npc3, npc4};
 			        {}; // no pedestrians;
 			        {}; // no obstacles;
-			        evn; // default environment
-			        {}; // no traffic constraints
+			        evn;
 };
 
 
@@ -62,5 +61,3 @@ dis4 = dis(ego_state, npc4_state);
 // assertion 0
 trace |= (G (dis1>=0.5 & dis2>=0.5 & dis3>=0.5 &dis4>=0.5)) & (F (dis(ego_state, ego_target_position)<=2.0));
 
-// assertion 1
-//trace |= F (dis(ego_state, ego_target_position)<=2.0);
