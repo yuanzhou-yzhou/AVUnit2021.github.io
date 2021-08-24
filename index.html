@@ -274,10 +274,21 @@
                 </video>
                 <div class="media-body">
                     <p>
-						When an NPC vehicle is passing through the same intersection,
-						Apollo predicts that the ego vehicle can pass through the intersection,
-						so it generates an overtaking action, and the ego vehicle does not decelerate, resulting in a collision.
-						Actually, the ego vehicle should slow down its motion and give way to the NPC vehicle.
+						First, since the 10003 NPC vehicle is ahead, the ego vehicle decides to slow down and stop its motion before entering the intersection
+						(<i class="ts" data-target="temporary-stopping" data-value="8.3">8s</i>).
+						When the NPC vehicles are passing through the intersection, the 10002 vehicle finds that 10003 vehicle is ahead, so it stops temporally to avoid collision
+						(<i class="ts" data-target="temporary-stopping" data-value="14.6">14s</i>)
+						and then restarts its motion
+						(<i class="ts" data-target="temporary-stopping" data-value="23.1">23s</i>).
+						The ego vehicle cannot recognize such a temporary stop and regards the 10002 vehicle as a stationary one,
+						so it continues its motion
+						(<i class="ts" data-target="temporary-stopping" data-value="21.6">21s</i>)
+						and causes a collision with the 10002 vehicle
+						(<i class="ts" data-target="temporary-stopping" data-value="25.3">25s</i>).
+					</p>
+					<p>
+						For such a situation, rather than continue its motion immediately,
+						the ego vehicle should monitor the 10002 vehicle for a while and then decide whether continue its motion or not.
 					</p>
 <!--                    <p><b>Video description</b></p>-->
 <!--                    <p> When the ego vehicle is approaching the junction, Apollo makes an overtaking action-->
