@@ -32,11 +32,10 @@ weather = {rain:0.5, snow: 0.1, wetness: heavy};
 evn = Environment(time, weather);
 scenario0 = CreateScenario{load(map_name);
                  ego_vehicle;
-                 {npc1, npc2, npc3, npc4, npc5}; // no other vehicles;
+                 {npc1, npc2, npc3, npc4, npc5}; 
                  {}; // no pedestrians;
                  {}; // no obstacles;
-                 evn; // default environment
-                 {}; // no traffic constraints
+                 evn; 
 };
 
 Trace trace = EXE(scenario0);
@@ -55,9 +54,6 @@ npc_vehicle5= trace[perception][npc5];
 npc_vehicle5_truth= trace[truth][npc5];
 
 dis_target = dis(ego_vehicle_state, target_position);
-
-// assertion 0
-// trace |= F {dis_target} <= {5};
 
 dis1 = dis(ego_vehicle_state, npc_vehicle1_truth);
 dis2 = dis(ego_vehicle_state, npc_vehicle2_truth);
