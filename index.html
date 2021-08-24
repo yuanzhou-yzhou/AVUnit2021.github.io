@@ -203,17 +203,22 @@
                 </video>
                 <div class="media-body">
                     <p>
-						When an NPC vehicle is passing through the same intersection,
-						Apollo predicts that the ego vehicle can pass through the intersection,
-						so it generates an overtaking action, and the ego vehicle does not decelerate, resulting in a collision.
-						Actually, the ego vehicle should slow down its motion and give way to the NPC vehicle.
-					</p>
-                    <p><b>Video description</b></p>
-                    <p> When the ego vehicle is approaching the junction, Apollo makes an overtaking action
+						In this video, the ego vehicle and four NPC vehicles are passing through an intersection simultaneously.
+						During approaching the junction, Apollo makes an overtaking action
 						(<i class="ts" data-target="wrong-overtaking-action" data-value="6">6s</i>).
 						Hence, the ego vehicle continues accelerating and causes a collision with the 10002 NPC vehicle
 						(<i class="ts" data-target="wrong-overtaking-action" data-value="11.2">11s</i>).
-                    </p>
+					</p>
+					<p>
+						In this situation, due to the wrong overtaking action made by Apollo, the ego vehicle collides with an NPC vehicle.
+						Actually, Apollo should slow down the ego vehicle and give way to the NPC vehicle.
+					</p>
+<!--                    <p><b>Video description</b></p>-->
+<!--                    <p> When the ego vehicle is approaching the junction, Apollo makes an overtaking action-->
+<!--						(<i class="ts" data-target="wrong-overtaking-action" data-value="6">6s</i>).-->
+<!--						Hence, the ego vehicle continues accelerating and causes a collision with the 10002 NPC vehicle-->
+<!--						(<i class="ts" data-target="wrong-overtaking-action" data-value="11.2">11s</i>).-->
+<!--                    </p>-->
                 </div>
             </div>
 			<br>
@@ -227,17 +232,13 @@
                 </video>
                 <div class="media-body">
                     <p>
-						When an NPC vehicle is passing through the same intersection,
-						Apollo predicts that the ego vehicle can pass through the intersection,
-						so it generates an overtaking action, and the ego vehicle does not decelerate, resulting in a collision.
-						Actually, the ego vehicle should slow down its motion and give way to the NPC vehicle.
-					</p>
-                    <p><b>Video description</b></p>
-                    <p> When the ego vehicle is approaching the junction, Apollo makes an overtaking action
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="6">6s</i>).
-						Hence, the ego vehicle continues accelerating and causes a collision with the 10002 NPC vehicle
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="11.2">11s</i>).
-                    </p>
+						In this video, Apollo first detects the NPC vehicle 10002 and decides to yield to it
+						(<i class="ts" data-target="no-motion-prediction" data-value="3">3s</i>).
+						When the vehicle 10002 moves into the intersection, it  slows down to 0.9m/s.
+						Then Apollo regards it as a stationary vehicle and has no motion prediction
+						(<i class="ts" data-target="no-motion-prediction" data-value="10.4">10s</i>).
+						Hence, the ego vehicle accelerates to go through the intersection and causes a collision
+						(<i class="ts" data-target="no-motion-prediction" data-value="15">15s</i>).
                 </div>
             </div>
 			<br>
@@ -251,17 +252,15 @@
                 </video>
                 <div class="media-body">
                     <p>
-						When an NPC vehicle is passing through the same intersection,
-						Apollo predicts that the ego vehicle can pass through the intersection,
-						so it generates an overtaking action, and the ego vehicle does not decelerate, resulting in a collision.
-						Actually, the ego vehicle should slow down its motion and give way to the NPC vehicle.
+						Apollo first decides to overtake the 10003 NPC vehicle
+						(<i class="ts" data-target="soft-braking" data-value="3.5">3s</i>).
+						However, when the ego vehicle approaches the NPC vehicle, Apollo finds that it is dangerous and decides to yield to the NPc vehicle
+						(<i class="ts" data-target="soft-braking" data-value="5.2">5s</i>).
+						However, the ego vehicle brakes too softly (capped at 50% of the maximal braking force) and causes a collision
+						(<i class="ts" data-target="soft-braking" data-value="8">8s</i>).
+						If the ego vehicle braked with 100% braking force, it could stopped where the planned trajectory ends
+						(<i class="ts" data-target="soft-braking" data-value="7.25">7s</i>).
 					</p>
-                    <p><b>Video description</b></p>
-                    <p> When the ego vehicle is approaching the junction, Apollo makes an overtaking action
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="6">6s</i>).
-						Hence, the ego vehicle continues accelerating and causes a collision with the 10002 NPC vehicle
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="11.2">11s</i>).
-                    </p>
                 </div>
             </div>
 			<br>
@@ -280,12 +279,12 @@
 						so it generates an overtaking action, and the ego vehicle does not decelerate, resulting in a collision.
 						Actually, the ego vehicle should slow down its motion and give way to the NPC vehicle.
 					</p>
-                    <p><b>Video description</b></p>
-                    <p> When the ego vehicle is approaching the junction, Apollo makes an overtaking action
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="6">6s</i>).
-						Hence, the ego vehicle continues accelerating and causes a collision with the 10002 NPC vehicle
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="11.2">11s</i>).
-                    </p>
+<!--                    <p><b>Video description</b></p>-->
+<!--                    <p> When the ego vehicle is approaching the junction, Apollo makes an overtaking action-->
+<!--						(<i class="ts" data-target="wrong-overtaking-action" data-value="6">6s</i>).-->
+<!--						Hence, the ego vehicle continues accelerating and causes a collision with the 10002 NPC vehicle-->
+<!--						(<i class="ts" data-target="wrong-overtaking-action" data-value="11.2">11s</i>).-->
+<!--                    </p>-->
                 </div>
             </div>
 			<br>
@@ -299,17 +298,8 @@
                 </video>
                 <div class="media-body">
                     <p>
-						When an NPC vehicle is passing through the same intersection,
-						Apollo predicts that the ego vehicle can pass through the intersection,
-						so it generates an overtaking action, and the ego vehicle does not decelerate, resulting in a collision.
-						Actually, the ego vehicle should slow down its motion and give way to the NPC vehicle.
+
 					</p>
-                    <p><b>Video description</b></p>
-                    <p> When the ego vehicle is approaching the junction, Apollo makes an overtaking action
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="6">6s</i>).
-						Hence, the ego vehicle continues accelerating and causes a collision with the 10002 NPC vehicle
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="11.2">11s</i>).
-                    </p>
                 </div>
             </div>
 			<br>
@@ -323,17 +313,8 @@
                 </video>
                 <div class="media-body">
                     <p>
-						When an NPC vehicle is passing through the same intersection,
-						Apollo predicts that the ego vehicle can pass through the intersection,
-						so it generates an overtaking action, and the ego vehicle does not decelerate, resulting in a collision.
-						Actually, the ego vehicle should slow down its motion and give way to the NPC vehicle.
+
 					</p>
-                    <p><b>Video description</b></p>
-                    <p> When the ego vehicle is approaching the junction, Apollo makes an overtaking action
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="6">6s</i>).
-						Hence, the ego vehicle continues accelerating and causes a collision with the 10002 NPC vehicle
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="11.2">11s</i>).
-                    </p>
                 </div>
             </div>
 			<br>
@@ -347,17 +328,8 @@
                 </video>
                 <div class="media-body">
                     <p>
-						When an NPC vehicle is passing through the same intersection,
-						Apollo predicts that the ego vehicle can pass through the intersection,
-						so it generates an overtaking action, and the ego vehicle does not decelerate, resulting in a collision.
-						Actually, the ego vehicle should slow down its motion and give way to the NPC vehicle.
+
 					</p>
-                    <p><b>Video description</b></p>
-                    <p> When the ego vehicle is approaching the junction, Apollo makes an overtaking action
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="6">6s</i>).
-						Hence, the ego vehicle continues accelerating and causes a collision with the 10002 NPC vehicle
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="11.2">11s</i>).
-                    </p>
                 </div>
             </div>
 			<br>
@@ -371,17 +343,8 @@
                 </video>
                 <div class="media-body">
                     <p>
-						When an NPC vehicle is passing through the same intersection,
-						Apollo predicts that the ego vehicle can pass through the intersection,
-						so it generates an overtaking action, and the ego vehicle does not decelerate, resulting in a collision.
-						Actually, the ego vehicle should slow down its motion and give way to the NPC vehicle.
+
 					</p>
-                    <p><b>Video description</b></p>
-                    <p> When the ego vehicle is approaching the junction, Apollo makes an overtaking action
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="6">6s</i>).
-						Hence, the ego vehicle continues accelerating and causes a collision with the 10002 NPC vehicle
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="11.2">11s</i>).
-                    </p>
                 </div>
             </div>
 			<br>
@@ -395,17 +358,8 @@
                 </video>
                 <div class="media-body">
                     <p>
-						When an NPC vehicle is passing through the same intersection,
-						Apollo predicts that the ego vehicle can pass through the intersection,
-						so it generates an overtaking action, and the ego vehicle does not decelerate, resulting in a collision.
-						Actually, the ego vehicle should slow down its motion and give way to the NPC vehicle.
+
 					</p>
-                    <p><b>Video description</b></p>
-                    <p> When the ego vehicle is approaching the junction, Apollo makes an overtaking action
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="6">6s</i>).
-						Hence, the ego vehicle continues accelerating and causes a collision with the 10002 NPC vehicle
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="11.2">11s</i>).
-                    </p>
                 </div>
             </div>
 			<br>
@@ -419,17 +373,9 @@
                 </video>
                 <div class="media-body">
                     <p>
-						When an NPC vehicle is passing through the same intersection,
-						Apollo predicts that the ego vehicle can pass through the intersection,
-						so it generates an overtaking action, and the ego vehicle does not decelerate, resulting in a collision.
-						Actually, the ego vehicle should slow down its motion and give way to the NPC vehicle.
+
 					</p>
-                    <p><b>Video description</b></p>
-                    <p> When the ego vehicle is approaching the junction, Apollo makes an overtaking action
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="6">6s</i>).
-						Hence, the ego vehicle continues accelerating and causes a collision with the 10002 NPC vehicle
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="11.2">11s</i>).
-                    </p>
+
                 </div>
             </div>
 			<br>
@@ -443,17 +389,8 @@
                 </video>
                 <div class="media-body">
                     <p>
-						When an NPC vehicle is passing through the same intersection,
-						Apollo predicts that the ego vehicle can pass through the intersection,
-						so it generates an overtaking action, and the ego vehicle does not decelerate, resulting in a collision.
-						Actually, the ego vehicle should slow down its motion and give way to the NPC vehicle.
+
 					</p>
-                    <p><b>Video description</b></p>
-                    <p> When the ego vehicle is approaching the junction, Apollo makes an overtaking action
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="6">6s</i>).
-						Hence, the ego vehicle continues accelerating and causes a collision with the 10002 NPC vehicle
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="11.2">11s</i>).
-                    </p>
                 </div>
             </div>
 			<br>
@@ -467,17 +404,8 @@
                 </video>
                 <div class="media-body">
                     <p>
-						When an NPC vehicle is passing through the same intersection,
-						Apollo predicts that the ego vehicle can pass through the intersection,
-						so it generates an overtaking action, and the ego vehicle does not decelerate, resulting in a collision.
-						Actually, the ego vehicle should slow down its motion and give way to the NPC vehicle.
+
 					</p>
-                    <p><b>Video description</b></p>
-                    <p> When the ego vehicle is approaching the junction, Apollo makes an overtaking action
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="6">6s</i>).
-						Hence, the ego vehicle continues accelerating and causes a collision with the 10002 NPC vehicle
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="11.2">11s</i>).
-                    </p>
                 </div>
             </div>
 			<br>
@@ -491,17 +419,8 @@
                 </video>
                 <div class="media-body">
                     <p>
-						When an NPC vehicle is passing through the same intersection,
-						Apollo predicts that the ego vehicle can pass through the intersection,
-						so it generates an overtaking action, and the ego vehicle does not decelerate, resulting in a collision.
-						Actually, the ego vehicle should slow down its motion and give way to the NPC vehicle.
+
 					</p>
-                    <p><b>Video description</b></p>
-                    <p> When the ego vehicle is approaching the junction, Apollo makes an overtaking action
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="6">6s</i>).
-						Hence, the ego vehicle continues accelerating and causes a collision with the 10002 NPC vehicle
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="11.2">11s</i>).
-                    </p>
                 </div>
             </div>
 			<br>
@@ -515,17 +434,8 @@
                 </video>
                 <div class="media-body">
                     <p>
-						When an NPC vehicle is passing through the same intersection,
-						Apollo predicts that the ego vehicle can pass through the intersection,
-						so it generates an overtaking action, and the ego vehicle does not decelerate, resulting in a collision.
-						Actually, the ego vehicle should slow down its motion and give way to the NPC vehicle.
+
 					</p>
-                    <p><b>Video description</b></p>
-                    <p> When the ego vehicle is approaching the junction, Apollo makes an overtaking action
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="6">6s</i>).
-						Hence, the ego vehicle continues accelerating and causes a collision with the 10002 NPC vehicle
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="11.2">11s</i>).
-                    </p>
                 </div>
             </div>
 			<br>
@@ -540,17 +450,8 @@
                 <div class="media-body">
 					<h5 class="mt-15-1"> Collisions in Cut-In </h5>
                     <p>
-						When an NPC vehicle is passing through the same intersection,
-						Apollo predicts that the ego vehicle can pass through the intersection,
-						so it generates an overtaking action, and the ego vehicle does not decelerate, resulting in a collision.
-						Actually, the ego vehicle should slow down its motion and give way to the NPC vehicle.
+
 					</p>
-                    <p><b>Video description</b></p>
-                    <p> When the ego vehicle is approaching the junction, Apollo makes an overtaking action
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="6">6s</i>).
-						Hence, the ego vehicle continues accelerating and causes a collision with the 10002 NPC vehicle
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="11.2">11s</i>).
-                    </p>
                 </div>
             </div>
 			<br>
@@ -562,17 +463,8 @@
                 <div class="media-body">
 					<h5 class="mt-15-2"> Stopping in Cut-In </h5>
                     <p>
-						When an NPC vehicle is passing through the same intersection,
-						Apollo predicts that the ego vehicle can pass through the intersection,
-						so it generates an overtaking action, and the ego vehicle does not decelerate, resulting in a collision.
-						Actually, the ego vehicle should slow down its motion and give way to the NPC vehicle.
+
 					</p>
-                    <p><b>Video description</b></p>
-                    <p> When the ego vehicle is approaching the junction, Apollo makes an overtaking action
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="6">6s</i>).
-						Hence, the ego vehicle continues accelerating and causes a collision with the 10002 NPC vehicle
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="11.2">11s</i>).
-                    </p>
                 </div>
             </div>
 			<br>
@@ -587,17 +479,8 @@
                 </video>
                 <div class="media-body">
                     <p>
-						When an NPC vehicle is passing through the same intersection,
-						Apollo predicts that the ego vehicle can pass through the intersection,
-						so it generates an overtaking action, and the ego vehicle does not decelerate, resulting in a collision.
-						Actually, the ego vehicle should slow down its motion and give way to the NPC vehicle.
+
 					</p>
-                    <p><b>Video description</b></p>
-                    <p> When the ego vehicle is approaching the junction, Apollo makes an overtaking action
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="6">6s</i>).
-						Hence, the ego vehicle continues accelerating and causes a collision with the 10002 NPC vehicle
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="11.2">11s</i>).
-                    </p>
                 </div>
             </div>
 			<br>
@@ -611,17 +494,8 @@
                 </video>
                 <div class="media-body">
                     <p>
-						When an NPC vehicle is passing through the same intersection,
-						Apollo predicts that the ego vehicle can pass through the intersection,
-						so it generates an overtaking action, and the ego vehicle does not decelerate, resulting in a collision.
-						Actually, the ego vehicle should slow down its motion and give way to the NPC vehicle.
+
 					</p>
-                    <p><b>Video description</b></p>
-                    <p> When the ego vehicle is approaching the junction, Apollo makes an overtaking action
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="6">6s</i>).
-						Hence, the ego vehicle continues accelerating and causes a collision with the 10002 NPC vehicle
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="11.2">11s</i>).
-                    </p>
                 </div>
             </div>
 			<br>
@@ -635,17 +509,8 @@
                 </video>
                 <div class="media-body">
                     <p>
-						When an NPC vehicle is passing through the same intersection,
-						Apollo predicts that the ego vehicle can pass through the intersection,
-						so it generates an overtaking action, and the ego vehicle does not decelerate, resulting in a collision.
-						Actually, the ego vehicle should slow down its motion and give way to the NPC vehicle.
+
 					</p>
-                    <p><b>Video description</b></p>
-                    <p> When the ego vehicle is approaching the junction, Apollo makes an overtaking action
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="6">6s</i>).
-						Hence, the ego vehicle continues accelerating and causes a collision with the 10002 NPC vehicle
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="11.2">11s</i>).
-                    </p>
                 </div>
             </div>
 			<br>
@@ -659,17 +524,8 @@
                 </video>
                 <div class="media-body">
                     <p>
-						When an NPC vehicle is passing through the same intersection,
-						Apollo predicts that the ego vehicle can pass through the intersection,
-						so it generates an overtaking action, and the ego vehicle does not decelerate, resulting in a collision.
-						Actually, the ego vehicle should slow down its motion and give way to the NPC vehicle.
+
 					</p>
-                    <p><b>Video description</b></p>
-                    <p> When the ego vehicle is approaching the junction, Apollo makes an overtaking action
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="6">6s</i>).
-						Hence, the ego vehicle continues accelerating and causes a collision with the 10002 NPC vehicle
-						(<i class="ts" data-target="wrong-overtaking-action" data-value="11.2">11s</i>).
-                    </p>
                 </div>
             </div>
 			<br>
