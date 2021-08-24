@@ -274,17 +274,17 @@
                 </video>
                 <div class="media-body">
                     <p>
-						First, since the 10003 NPC vehicle is ahead, the ego vehicle decides to slow down and stop its motion before entering the intersection
-						(<i class="ts" data-target="temporary-stopping" data-value="8.3">8s</i>).
-						When the NPC vehicles are passing through the intersection, the 10002 vehicle finds that 10003 vehicle is ahead, so it stops temporally to avoid collision
-						(<i class="ts" data-target="temporary-stopping" data-value="14.6">14s</i>)
+						First, since the 10003 NPC vehicle is ahead, the ego vehicle decides to slow down and stop its motion
+						(<i class="ts" data-target="temporary-stopping" data-value="17">17s</i>).
+						When the NPC vehicles are passing through the intersection, the 10002 vehicle finds that 10003 vehicle is nearby, so it stops temporally to avoid collision
+						(<i class="ts" data-target="temporary-stopping" data-value="19.5">19s</i>)
 						and then restarts its motion
-						(<i class="ts" data-target="temporary-stopping" data-value="23.1">23s</i>).
+						(<i class="ts" data-target="temporary-stopping" data-value="22.4">22s</i>).
 						The ego vehicle cannot recognize such a temporary stop and regards the 10002 vehicle as a stationary one,
 						so it continues its motion
-						(<i class="ts" data-target="temporary-stopping" data-value="21.6">21s</i>)
+						(<i class="ts" data-target="temporary-stopping" data-value="19.4">19s</i>)
 						and causes a collision with the 10002 vehicle
-						(<i class="ts" data-target="temporary-stopping" data-value="25.3">25s</i>).
+						(<i class="ts" data-target="temporary-stopping" data-value="23.1">23s</i>).
 					</p>
 					<p>
 						For such a situation, rather than continue its motion immediately,
@@ -309,6 +309,10 @@
                 </video>
                 <div class="media-body">
                     <p>
+						In this case, the 10000 vehicle is a SchoolBus and is large. When it turns left, it has to occupy the adjacent lane
+						(<i class="ts" data-target="rear-collision" data-value="17.5">17s</i>).
+						However, the ego vehicle cannot detect such an occupation and continue its motion, resuling in a collision
+						(<i class="ts" data-target="rear-collision" data-value="19">19s</i>).
 
 					</p>
                 </div>
@@ -324,6 +328,15 @@
                 </video>
                 <div class="media-body">
                     <p>
+						When an NPC vehicle has a multiple paths to move along, the ego vehicle selects only one path as its prediction and then make corresponding decisions.
+						However, it cannot guarantee everlasting correctness, and wrong prediction may cause collisions.
+						For example, in this video, the ego vehicle finds that there are two paths for the 10000 vehicle
+						(<i class="ts" data-target="wrong-prediction" data-value="8.8">8s</i>) and make a prediction of rectilinear motion
+						(<i class="ts" data-target="wrong-prediction" data-value="10">10s</i>).
+						However, the real motion is the 10000 vehicle will turn left
+						(<i class="ts" data-target="wrong-prediction" data-value="12">12s</i>).
+						Thus, it is too late for the ego vehicle to stop its motion, resulting in a collision
+						(<i class="ts" data-target="wrong-prediction" data-value="14.2">14s</i>).
 
 					</p>
                 </div>
@@ -339,6 +352,16 @@
                 </video>
                 <div class="media-body">
                     <p>
+						Apollo cannot detect accidents in an intersection and still moves into the intersection.
+						Thus, it is blocked at the intersection, which will block other vehicles.
+						As shown in the video, at
+						<i class="ts" data-target="no-accident-detection" data-value="9.5">9s</i>,
+						an accident occurred at the intersection.
+						To avoid collisions with the 10002 vehicle, the ego vehicle stops its motion before entering the intersection
+						(<i class="ts" data-target="no-accident-detection" data-value="15.3">15s</i>).
+						However, the ego vehicle restarts its motion and enters the intersection, ignoring the accident.
+						Hence, it is blocked at the intersection
+						(<i class="ts" data-target="no-accident-detection" data-value="27">27s</i>) and blocks the first intersecting lane of the junction lane where the ego vehicle is.
 
 					</p>
                 </div>
