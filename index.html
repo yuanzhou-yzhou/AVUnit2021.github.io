@@ -379,11 +379,12 @@
                 </video>
                 <div class="media-body">
                     <p>
-						In the video, the ego vehicle start to perform lane changing at
+						In the video, the ego vehicle starts to perform lane changing at
 						(<i class="ts" data-target="no-deceleration" data-value="4.6">4s</i>).
 						However, since the adjacent lane is occupied by NPC vehicles, the ego vehicle starts to perform lane following at
 						(<i class="ts" data-target="no-deceleration" data-value="11.8">11s</i>).
-						In this case, to perform lane changing successfully, the ego vehicle should slow down at the beginning of lane changing (i.e., <i class="ts" data-target="no-deceleration" data-value="4.6">4s</i>). Thus, it can wait for the move of Vehicle 10002 and guarantee sufficient distance to perform lane changing.
+						In this case, the ego vehicle should slow down at the beginning of lane changing
+						(<i class="ts" data-target="no-deceleration" data-value="4.6">4s</i>). Thus, it can wait for the move of Vehicle 10002 and guarantee sufficient distance to perform lane changing.
 					</p>
                 </div>
             </div>
@@ -398,10 +399,11 @@
                 </video>
                 <div class="media-body">
                     <p>
-						When there is a stationary vehicle ahead of the destination, the ego vehicle stop early and cannot reach the destination. As shown in the video, the ego vehicle stops early at
+						When a stationary vehicle is ahead of the destination, the ego vehicle stops early and cannot reach the destination.
+						As shown in the video, the ego vehicle stops early at
 						(<i class="ts" data-target="obstacle-blocking" data-value="38">38s</i>).
 						By enlarging the scene (<i class="ts" data-target="obstacle-blocking" data-value="45">45s</i>), where the second red decision fence denotes destination arrival,
-						 we can find that at this time instance Vehicle 10002 is about 5 meters ahead of the destination, and it is safe enough for the ego vehicle arrive at the destination.
+						 we can find that at this time instant, Vehicle 10002 is about 5 meters ahead of the destination, and it is safe enough for the ego vehicle to arrive at the destination.
 					</p>
                 </div>
             </div>
@@ -438,15 +440,15 @@
                 </video>
                 <div class="media-body">
                     <p>
-						The ego vehicle first tries to perform lane changing at
-						(<i class="ts" data-target="stuck" data-value="30.4">30s</i>).
-						and switches to lane following soon
+						The ego vehicle tries to perform lane changing at
+						<i class="ts" data-target="stuck" data-value="30.4">30s</i>
+						but switches to lane following soon
 						(<i class="ts" data-target="stuck" data-value="31.15">31s</i>).
-						At this time instant, the ahead NPC vehicle stops, so the ego vehicle tries to perform lane changing again
+						At this instant, the NPC vehicle ahead stops, so the ego vehicle tries to perform lane changing again
 						(<i class="ts" data-target="stuck" data-value="32.65">32s</i>).
 						Unfortunately, it is stuck between the two adjacent lanes
 						(<i class="ts" data-target="stuck" data-value="34.7">34s</i>)
-						and stop forever.
+						and stops forever.
 
 
 					</p>
@@ -463,9 +465,9 @@
                 </video>
                 <div class="media-body">
                     <p>
-						The ego vehicle first perform lane following and goes across the intersection
+						The ego vehicle first performs lane following and goes across the intersection
 						(<i class="ts" data-target="aggressive-following" data-value="22.5">22s</i>).
-						Since there is another vehicle on the adjacent lane, the ego vehicle does not make a lane-changing decision and continue lane following.
+						Since another vehicle is on the adjacent lane, the ego vehicle does not make a lane-changing decision and continue lane following.
 						However, since Vehicle 10000 stops ahead, the ego vehicle is too close to perform lane changing.
 						Therefore, even though the ego vehicle would like to perform lane changing
 						(<i class="ts" data-target="aggressive-following" data-value="27.9">27s</i>), it has to stop forever.
@@ -484,11 +486,11 @@
                 </video>
                 <div class="media-body">
                     <p>
-						In this video, the ego vehicle first perform a long-time lane following and then start to perform lane changing
+						In this video, the ego vehicle first performs a long-time lane following and then start to perform lane changing
 						(<i class="ts" data-target="wrong-overtaking" data-value="80.6">80s</i>).
-						However, currently the lane is occupied by the NPC vehicles, and the ego vehicle cannot complete overtaking successfully.
+						However, the lane is currently occupied by the NPC vehicles, and the ego vehicle cannot complete overtaking successfully.
 						For such a situation, the ego vehicle could either start to overtake the vehicles ahead at the beginning of the motion, as we can find that there is a sufficient distance from the NPC vehicles to the destination to complete the overtaking action
-						(<i class="ts" data-target="wrong-overtaking" data-value="1">1s</i>),
+						(<i class="ts" data-target="wrong-overtaking" data-value="1">1s</i>)
 						or keep following until it reaches the destination.
 					</p>
                 </div>
@@ -504,7 +506,7 @@
                 </video>
                 <div class="media-body">
                     <p>
-						Based on the routing result (note that only the lanes marked with red lines are planned lanes to move along), we can find that there is no lane changing before the intersection, as the  right lane is not a planned lane by the route planning module.
+						Based on the routing result (note that only the lanes marked with red lines are planned routes to move along), we can find that there is no lane changing before the intersection, as the  right lane is not a planned lane by the route planning module.
 						However, after crossing the intersection
 						(<i class="ts" data-target="no-lane-change" data-value="27.8">27s</i>), there is no sufficient distance to perform lane changing.
 						Hence, the ego vehicle cannot arrive at the destination.
@@ -524,7 +526,7 @@
                 <div class="media-body">
 					<h5 class="mt-15-1"> Collisions in Cut-In </h5>
                     <p>
-						In this video, to perform cut-in and complete the overtaking action, Apollo generates a trajectory that is very close to Vehicle 10002
+						In this video, Apollo generates a trajectory very close to Vehicle 10002 to perform cut-in and complete the overtaking action
 						(<i class="ts" data-target="wrong-cut-in-collision" data-value="15">15s</i>).
 						Hence, when the ego vehicle moves along the trajectory, it causes a collision with Vehicle 10002
 						(<i class="ts" data-target="wrong-cut-in-collision" data-value="18">18s</i>).
@@ -541,11 +543,11 @@
                 <div class="media-body">
 					<h5 class="mt-15-2"> Stopping in Cut-In </h5>
                     <p>
-						In this test case, the ego vehicle performs cut-in between Vehicle 10000 and Vehicle 10001 which has stopped its motion
+						In this test case, the ego vehicle performs a cut-in between Vehicle 10000 and Vehicle 10001, which has stopped its motion
 						(<i class="ts" data-target="wrong-cut-in-stop" data-value="10">10s</i>).
 						Thus, the ego vehicle is blocked forever by Vehicle 10001
 						(<i class="ts" data-target="wrong-cut-in-stop" data-value="16">16s</i>).
-						Clearly, the ego vehicle should also overtake the two NPC vehicles ahead.
+						The ego vehicle should also overtake the two NPC vehicles ahead.
 					</p>
                 </div>
             </div>
@@ -561,9 +563,9 @@
                 </video>
                 <div class="media-body">
                     <p>
-						In this video, the ego vehicle overtakes Vehicle 10000 and performs cut-in between Vehicle 10000 and Vehicle 10001
+						The ego vehicle overtakes Vehicle 10000 and performs a cut-in between Vehicle 10000 and Vehicle 10001 in this video
 						(<i class="ts" data-target="new-overtaking" data-value="6.5">6s</i>).
-						After about 49s, the ego vehicle almost complete the cut-in action.
+						After about 49s, the ego vehicle almost completes the cut-in action.
 						However, it terminates the cut-in action and restarts a new overtaking action immediately
 						(<i class="ts" data-target="new-overtaking" data-value="55.1">55s</i>).
 						At this time instant, the lane to the destination is occupied by the NPC vehicle.
@@ -583,7 +585,7 @@
                 </video>
                 <div class="media-body">
                     <p>
-						In this case, the left lane belongs to the opposite road, while the right lane belongs to the same road. Hence, it is expected to perform lane changing by turning right. However, the ego vehicle turns left to perform overtaking
+						In this case, the left lane belongs to the opposite road, while the right lane belongs to the same road. Hence, it is expected to perform lane changing by turning right. Instead, however, the ego vehicle turns left to perform overtaking
 						(<i class="ts" data-target="wrong-direction" data-value="9.4">9s</i>).
 					</p>
                 </div>
@@ -603,7 +605,7 @@
 						(<i class="ts" data-target="overtaking-return" data-value="29.1">29s</i>).
 						After about 6s later, the ego vehicle finds it cannot perform overtaking successfully, so it turns back
 						(<i class="ts" data-target="overtaking-return" data-value="35.6">35s</i>).
-						In this situation, even though the ego vehicle can arrive at the destination, it may blocks other vehicles during its motion (e.g., it may block the vehicles moving along the adjacent lane between 29s to 35s).
+						In this situation, even though the ego vehicle can arrive at the destination, it may block other vehicles during its motion (e.g., it may block the vehicles moving along the adjacent lane between 29s to 35s).
 
 					</p>
                 </div>
@@ -620,9 +622,9 @@
                 <div class="media-body">
                     <p>
 						In this video, the ego vehicle first follows the vehicle ahead.
-						At <i class="ts" data-target="no-overtaking" data-value="24.7">24s</i>, the speed of the NPC vehicle reduce to 0.2m/s. Then, the ego vehicle still follows the vehicles and does not perform overtaking, which takes almost 7 minutes to complete the motion.
+						At <i class="ts" data-target="no-overtaking" data-value="24.7">24s</i>, the speed of the NPC vehicle reduces to 0.2m/s. Then, the ego vehicle still follows the vehicle and does not overtake, taking almost 7 minutes to complete the motion.
 						Actually, from the top view of the scenario
-						(<i class="ts" data-target="no-overtaking" data-value="32">32s</i>), when the NPC vehicles slow down, the ego vehicle can overtake the vehicles from the right side and arrives at the destination quickly.
+						(<i class="ts" data-target="no-overtaking" data-value="32">32s</i>), when the NPC vehicles slow down, the ego vehicle can overtake the vehicles from the right side and arrive at the destination quickly.
 					</p>
                 </div>
             </div>
